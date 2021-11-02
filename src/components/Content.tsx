@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { MovieCard } from "./MovieCard";
 
 interface ContentProps {
@@ -12,7 +13,7 @@ interface ContentProps {
   }>,
 }
 
-export function Content({ movies }: ContentProps) {
+function ContentComponent({ movies }: ContentProps) {
   return (
     <main>
       <div className="movies-list">
@@ -29,3 +30,5 @@ export function Content({ movies }: ContentProps) {
     </main>
   )
 }
+
+export const Content = memo(ContentComponent)
